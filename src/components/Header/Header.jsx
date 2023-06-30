@@ -6,7 +6,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="text-white" id="home">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between ">
         <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6">
             Hello
