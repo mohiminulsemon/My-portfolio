@@ -1,0 +1,10 @@
+/* Add hover effect */
+nav a:hover {
+    color: #d1d5db;
+}
+
+/* Style active link */
+nav ul li a.active {
+    color: #3e3cb9;
+    text-decoration: underline;
+}
