@@ -21,7 +21,7 @@ import { AiOutlineApi } from "react-icons/ai";
 
 const Skills = () => {
   return (
-    <section className="py-16 text-white" id="skills">
+    <section className="py-16 text-brwon-200" id="skills">
       <div className="container mx-auto ">
         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-indigo-500">
           Skills

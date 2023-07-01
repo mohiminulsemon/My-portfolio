@@ -1,61 +1,125 @@
 import { useState } from "react";
-import { FiSun, FiMoon } from "react-icons/fi";
 import "./Nav.css";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeNavLink, setActiveNavLink] = useState("home");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navlink = (
-    <>
-      <li className="hover:text-gray-500">
-        <a href="#home">home</a>
-      </li>
-      <li className="hover:text-gray-500">
-        <a href="#about">About</a>
-      </li>
-      <li className="hover:text-gray-500">
-        <a href="#skills">Skills</a>
-      </li>
-      <li className="hover:text-gray-500">
-        <a href="#projects">Projects</a>
-      </li>
-      <li className="hover:text-gray-500">
-        <a href="#contact">Contact</a>
-      </li>
-    </>
-  );
+  const handleNavLinkClick = (navLink) => {
+    setActiveNavLink(navLink);
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="w-full fixed top-0 text-white  z-10 ">
+    <nav className="w-full fixed top-0  text-brown-200 z-10">
       <div className="container mx-auto py-5 flex items-center justify-between">
         <div className="">
-          <span className="text-3xl font-bold text-indigo-500 ">
-            Mohiminul Islam
-          </span>
+          <span className="text-3xl font-bold">Portfolio</span>
         </div>
-        <ul className="hidden md:flex space-x-10   font-bold text-sm uppercase">
-          {navlink}
+        <ul className="hidden md:flex space-x-10 font-bold text-sm uppercase">
+          <li className={`hover:text-gray-500 relative ${activeNavLink === "home" ? 'active' : ''}`}>
+            <a href="#home" onClick={() => handleNavLinkClick("home")}>
+              home
+            </a>
+            {activeNavLink === "home" && (
+              <span className="absolute w-full h-0.5 bg-white bottom-0 left-0"></span>
+            )}
+          </li>
+          <li className={`hover:text-gray-500 relative ${activeNavLink === "about" ? 'active' : ''}`}>
+            <a href="#about" onClick={() => handleNavLinkClick("about")}>
+              About
+            </a>
+            {activeNavLink === "about" && (
+              <span className="absolute w-full h-0.5 bg-white bottom-0 left-0"></span>
+            )}
+          </li>
+          <li className={`hover:text-gray-500 relative ${activeNavLink === "skills" ? 'active' : ''}`}>
+            <a href="#skills" onClick={() => handleNavLinkClick("skills")}>
+              Skills
+            </a>
+            {activeNavLink === "skills" && (
+              <span className="absolute w-full h-0.5 bg-white bottom-0 left-0"></span>
+            )}
+          </li>
+          <li className={`hover:text-gray-500 relative ${activeNavLink === "projects" ? 'active' : ''}`}>
+            <a href="#projects" onClick={() => handleNavLinkClick("projects")}>
+              Projects
+            </a>
+            {activeNavLink === "projects" && (
+              <span className="absolute w-full h-0.5 bg-white bottom-0 left-0"></span>
+            )}
+          </li>
+          <li className={`hover:text-gray-500 relative ${activeNavLink === "contact" ? 'active' : ''}`}>
+            <a href="#contact" onClick={() => handleNavLinkClick("contact")}>
+              Contact
+            </a>
+            {activeNavLink === "contact" && (
+              <span className="absolute w-full h-0.5 bg-white bottom-0 left-0"></span>
+            )}
+          </li>
         </ul>
-        <div
+        <button
           id="hamburger"
-          className={`md:hidden cursor-pointer z-20`}
+          className={`md:hidden cursor-pointer z-20 rounded-full p-2`}
           onClick={toggleMenu}
         >
-          <div className="w-6 h-0.5 bg-black mb-1"></div>
-          <div className="w-6 h-0.5 bg-black mb-1"></div>
-          <div className="w-6 h-0.5 bg-black mb-1"></div>
-        </div>
+          <div className="w-6 h-0.5 bg-white mb-1"></div>
+          <div className="w-6 h-0.5 bg-white mb-1"></div>
+          <div className="w-6 h-0.5 bg-white mb-1"></div>
+        </button>
         <ul
           id="menu"
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } md:hidden bg-indigo-900 absolute top-full w-32 p-10 rounded-b-3xl space-y-5 text-white text-center`}
+          className={`${isMenuOpen ? "block" : "hidden"} md:hidden bg-indigo-900 absolute top-full w-32 p-10 rounded-b-3xl space-y-5 text-white text-center`}
         >
-          {navlink}
+          <li>
+            <a
+              href="#home"
+              onClick={() => handleNavLinkClick("home")}
+              className={`block py-2 px-4 hover:bg-white hover:text-indigo-900 ${activeNavLink === "home" ? 'active' : ''}`}
+            >
+              home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              onClick={() => handleNavLinkClick("about")}
+              className={`block py-2 px-4 hover:bg-white hover:text-indigo-900 ${activeNavLink === "about" ? 'active' : ''}`}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#skills"
+              onClick={() => handleNavLinkClick("skills")}
+              className={`block py-2 px-4 hover:bg-white hover:text-indigo-900 ${activeNavLink === "skills" ? 'active' : ''}`}
+            >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              onClick={() => handleNavLinkClick("projects")}
+              className={`block py-2 px-4 hover:bg-white hover:text-indigo-900 ${activeNavLink === "projects" ? 'active' : ''}`}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onClick={() => handleNavLinkClick("contact")}
+              className={`block py-2 px-4 hover:bg-white hover:text-indigo-900 ${activeNavLink === "contact" ? 'active' : ''}`}
+            >
+              Contact
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

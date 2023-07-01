@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <ToastContainer />
       <Footer />
     </div>
   );
