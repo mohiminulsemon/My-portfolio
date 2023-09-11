@@ -11,12 +11,12 @@ const Header = () => {
           <h2 className="text-2xl mb-5">
             {" "}
             Hi There,
-            <br /> I'm{" "}
+            <br /> I&apos;m{" "}
             <span className="text-brown-200 text-3xl font-bold">
               Mohiminul Islam
             </span>{" "}
             <br />
-            And I'm a
+            And I&apos;m a
           </h2>
           <p className="text-4xl lg:text-5xl font-bold mb-6">
             <Typewriter
@@ -32,7 +32,7 @@ const Header = () => {
             />
           </p>
           <p className="text-lg mb-5">
-            I'm a passionate web developer with experience in front-end
+            I&apos;m a passionate web developer with experience in front-end
             development. I love exploring new technology in the world and creating beautiful and functional websites.
           </p>
           <div className="flex space-x-4 my-4">
